@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Html exposing (Html)
 import Html.App
+import Html.Attributes
 import Html.Events
 
 
@@ -31,7 +32,7 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    Html.div []
+    Html.div [ Html.Attributes.class "counter" ]
         [ Html.button
             [ Html.Events.onClick Decrease
             ]
