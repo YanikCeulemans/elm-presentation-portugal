@@ -6,41 +6,45 @@ import Html.Events
 
 
 type Msg
-    = SayHelloToEuricom
-    | SayHelloToElm
+    = Increase
+    | Decrease
 
 
 type alias Model =
-    String
+    Int
 
 
 model : Model
 model =
-    "world"
+    0
 
 
 update : Msg -> Model -> Model
 update msg model =
     case msg of
-        SayHelloToEuricom ->
-            "Euricom"
+        Increase ->
+            model + 1
 
-        SayHelloToElm ->
-            "Elm"
+        Decrease ->
+            model - 1
 
 
 view : Model -> Html Msg
 view model =
     Html.div []
         [ Html.button
-            [ Html.Events.onClick SayHelloToEuricom
+            [ Html.Events.onClick Decrease
             ]
-            [ Html.text "Say hello to Euricom" ]
+            [ Html.text "-" ]
+        , Html.div []
+            [ model
+                |> toString
+                |> Html.text
+            ]
         , Html.button
-            [ Html.Events.onClick SayHelloToElm
+            [ Html.Events.onClick Increase
             ]
-            [ Html.text "Say hello to Elm" ]
-        , Html.div [] [ Html.text ("Hello " ++ model ++ "!") ]
+            [ Html.text "+" ]
         ]
 
 

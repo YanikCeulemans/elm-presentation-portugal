@@ -7520,15 +7520,15 @@ var _elm_lang$html$Html_Events$Options = F2(
 var _user$project$Main$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
-		if (_p0.ctor === 'SayHelloToEuricom') {
-			return 'Euricom';
+		if (_p0.ctor === 'Increase') {
+			return model + 1;
 		} else {
-			return 'Elm';
+			return model - 1;
 		}
 	});
-var _user$project$Main$model = 'world';
-var _user$project$Main$SayHelloToElm = {ctor: 'SayHelloToElm'};
-var _user$project$Main$SayHelloToEuricom = {ctor: 'SayHelloToEuricom'};
+var _user$project$Main$model = 0;
+var _user$project$Main$Decrease = {ctor: 'Decrease'};
+var _user$project$Main$Increase = {ctor: 'Increase'};
 var _user$project$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -7540,21 +7540,11 @@ var _user$project$Main$view = function (model) {
 				_elm_lang$html$Html$button,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Events$onClick(_user$project$Main$SayHelloToEuricom)
+						_elm_lang$html$Html_Events$onClick(_user$project$Main$Decrease)
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html$text('Say hello to Euricom')
-					])),
-				A2(
-				_elm_lang$html$Html$button,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Events$onClick(_user$project$Main$SayHelloToElm)
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text('Say hello to Elm')
+						_elm_lang$html$Html$text('-')
 					])),
 				A2(
 				_elm_lang$html$Html$div,
@@ -7563,10 +7553,17 @@ var _user$project$Main$view = function (model) {
 				_elm_lang$core$Native_List.fromArray(
 					[
 						_elm_lang$html$Html$text(
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							'Hello ',
-							A2(_elm_lang$core$Basics_ops['++'], model, '!')))
+						_elm_lang$core$Basics$toString(model))
+					])),
+				A2(
+				_elm_lang$html$Html$button,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Events$onClick(_user$project$Main$Increase)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text('+')
 					]))
 			]));
 };
