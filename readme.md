@@ -1,5 +1,5 @@
 # Demo app: Counter
-This repository was created to go along with the talk I gave about Elm.
+This repository was created to go alongside the talk I gave about Elm.
 It features a very basic typical Elm application built with the Elm Architecture 
 using custom assets i.e. my own html/css.
 
@@ -10,6 +10,7 @@ milestone to the next.
 
 ## Building and running the code
 Follow these steps to build the project on your system:
+
 1. Install Elm by following the instructions on 
 https://guide.elm-lang.org/get_started.html
 2. Open up a terminal and run `elm-make Main.elm --output elm.js` to build 
