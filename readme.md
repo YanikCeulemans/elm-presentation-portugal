@@ -1,5 +1,5 @@
 # Demo app: Counter
-This repository was created to go along with the talk I gave about Elm.
+This repository was created to go alongside the talk I gave about Elm.
 It features a very basic typical Elm application built with the Elm Architecture 
 using custom assets i.e. my own html/css.
 
